@@ -10,23 +10,23 @@ func TestFunctOf(t *testing.T) {
 		any interface{}
 	}
 	tests := []struct {
-		name    string
-		args    args
-		want    *Funct
-		wantErr bool
+		name      string
+		args      args
+		want      Funct
+		wantPanic bool
 	}{
-		{"slice", args{[]int{}}, &Funct{[]int{}}, false},
-		{"map", args{map[int]int{}}, nil, true},
+		{"slice", args{[]int{1, 2}}, Funct{[]int{1, 2}}, false},
+		{"map", args{map[int]int{1: 2}}, Funct{}, true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := FunctOf(tt.args.any)
-			if (err != nil) != tt.wantErr {
-				t.Errorf("FunctOf() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("FunctOf() got = %v, want %v", got, tt.want)
+			defer func() {
+				if tt.wantPanic {
+					recover()
+				}
+			}()
+			if got := FunctOf(tt.args.any); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("FunctOf() = %v, want %v", got, tt.want)
 			}
 		})
 	}

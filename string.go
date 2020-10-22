@@ -37,3 +37,10 @@ func (a StringArray) Fold(start string, f func(a, b string) string) string {
 	}
 	return out
 }
+
+func (a StringArray) Join() (out string) {
+	for _, v := range a {
+		out += v
+	}
+	return
+}

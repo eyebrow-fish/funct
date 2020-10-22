@@ -38,6 +38,13 @@ func (a RuneArray) Fold(start rune, f func(a, b rune) rune) rune {
 	return out
 }
 
+func (a RuneArray) Join() (out string) {
+	for _, v := range a {
+		out += string(v)
+	}
+	return
+}
+
 func (a RuneArray) ToByteArray() (out ByteArray) {
 	for _, v := range a {
 		out = append(out, byte(v))

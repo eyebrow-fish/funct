@@ -38,6 +38,13 @@ func (a ByteArray) Fold(start byte, f func(a, b byte) byte) byte {
 	return out
 }
 
+func (a ByteArray) Join() (out string) {
+	for _, v := range a {
+		out += string(v)
+	}
+	return
+}
+
 func (a ByteArray) ToFloat32Array() (out Float32Array) {
 	for _, v := range a {
 		out = append(out, float32(v))

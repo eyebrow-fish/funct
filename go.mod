@@ -1,3 +1,3 @@
 module com.github/eyebrow-fish/funct
 
-go 1.14
+go 1.15

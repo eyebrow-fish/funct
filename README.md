@@ -22,6 +22,7 @@ import (
 	"fmt"
 	"com.github/eyebrow-fish/funct"
 )
+
 func main() {
 	var json []byte // pretend this is from json.Unmarshal(...)
 	yaml := funct.ByteArray(json).Filter(func(i byte) bool { return i != '{' && i != '}' }).Join()

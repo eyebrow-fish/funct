@@ -1,5 +1,7 @@
 package funct
 
+import "fmt"
+
 type ByteArray []byte
 
 func (a ByteArray) Filter(pred func(byte) bool) (out ByteArray) {
@@ -36,6 +38,24 @@ func (a ByteArray) Fold(start byte, f func(byte, byte) byte) byte {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a ByteArray) Find(pred func(byte) bool) (byte, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return 0, fmt.Errorf("no value found")
+}
+
+func (a ByteArray) AnyMatch(pred func(byte) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
 }
 
 func (a ByteArray) Join() (out string) {

@@ -1,5 +1,7 @@
 package funct
 
+import "fmt"
+
 type BoolArray []bool
 
 func (a BoolArray) Filter(pred func(bool) bool) (out BoolArray) {
@@ -36,4 +38,22 @@ func (a BoolArray) Fold(start bool, f func(bool, bool) bool) bool {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a BoolArray) Find(pred func(bool) bool) (bool, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return false, fmt.Errorf("no value found")
+}
+
+func (a BoolArray) AnyMatch(pred func(bool) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
 }

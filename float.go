@@ -1,6 +1,9 @@
 package funct
 
-import "strconv"
+import (
+	"fmt"
+	"strconv"
+)
 
 type Float32Array []float32
 
@@ -38,6 +41,24 @@ func (a Float32Array) Fold(start float32, f func(float32, float32) float32) floa
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a Float32Array) Find(pred func(float32) bool) (float32, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return 0, fmt.Errorf("no value found")
+}
+
+func (a Float32Array) AnyMatch(pred func(float32) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
 }
 
 func (a Float32Array) ToByteArray() (out ByteArray) {
@@ -174,6 +195,24 @@ func (a Float64Array) Fold(start float64, f func(float64, float64) float64) floa
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a Float64Array) Find(pred func(float64) bool) (float64, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return 0, fmt.Errorf("no value found")
+}
+
+func (a Float64Array) AnyMatch(pred func(float64) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
 }
 
 func (a Float64Array) ToByteArray() (out ByteArray) {

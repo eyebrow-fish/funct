@@ -1,6 +1,9 @@
 package funct
 
-import "strconv"
+import (
+	"fmt"
+	"strconv"
+)
 
 type UintArray []uint
 
@@ -38,6 +41,24 @@ func (a UintArray) Fold(start uint, f func(uint, uint) uint) uint {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a UintArray) Find(pred func(uint) bool) (uint, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return 0, fmt.Errorf("no value found")
+}
+
+func (a UintArray) AnyMatch(pred func(uint) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
 }
 
 func (a UintArray) ToByteArray() (out ByteArray) {
@@ -176,6 +197,24 @@ func (a Uint8Array) Fold(start uint8, f func(uint8, uint8) uint8) uint8 {
 	return out
 }
 
+func (a Uint8Array) Find(pred func(uint8) bool) (uint8, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return 0, fmt.Errorf("no value found")
+}
+
+func (a Uint8Array) AnyMatch(pred func(uint8) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
+}
+
 func (a Uint8Array) ToByteArray() (out ByteArray) {
 	for _, v := range a {
 		out = append(out, v)
@@ -310,6 +349,24 @@ func (a Uint16Array) Fold(start uint16, f func(uint16, uint16) uint16) uint16 {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a Uint16Array) Find(pred func(uint16) bool) (uint16, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return 0, fmt.Errorf("no value found")
+}
+
+func (a Uint16Array) AnyMatch(pred func(uint16) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
 }
 
 func (a Uint16Array) ToByteArray() (out ByteArray) {
@@ -448,6 +505,24 @@ func (a Uint32Array) Fold(start uint32, f func(uint32, uint32) uint32) uint32 {
 	return out
 }
 
+func (a Uint32Array) Find(pred func(uint32) bool) (uint32, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return 0, fmt.Errorf("no value found")
+}
+
+func (a Uint32Array) AnyMatch(pred func(uint32) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
+}
+
 func (a Uint32Array) ToByteArray() (out ByteArray) {
 	for _, v := range a {
 		out = append(out, byte(v))
@@ -582,6 +657,24 @@ func (a Uint64Array) Fold(start uint64, f func(uint64, uint64) uint64) uint64 {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a Uint64Array) Find(pred func(uint64) bool) (uint64, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return 0, fmt.Errorf("no value found")
+}
+
+func (a Uint64Array) AnyMatch(pred func(uint64) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
 }
 
 func (a Uint64Array) ToByteArray() (out ByteArray) {

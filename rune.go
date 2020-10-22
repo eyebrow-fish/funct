@@ -1,5 +1,7 @@
 package funct
 
+import "fmt"
+
 type RuneArray []rune
 
 func (a RuneArray) Filter(pred func(rune) bool) (out RuneArray) {
@@ -36,6 +38,24 @@ func (a RuneArray) Fold(start rune, f func(rune, rune) rune) rune {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a RuneArray) Find(pred func(rune) bool) (rune, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return 0, fmt.Errorf("no value found")
+}
+
+func (a RuneArray) AnyMatch(pred func(rune) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
 }
 
 func (a RuneArray) Join() (out string) {

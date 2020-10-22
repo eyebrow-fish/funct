@@ -69,3 +69,53 @@ func TestBoolArray_Fold(t *testing.T) {
 		})
 	}
 }
+
+func TestBoolArray_Find(t *testing.T) {
+	type args struct {
+		pred func(bool) bool
+	}
+	tests := []struct {
+		name    string
+		a       BoolArray
+		args    args
+		want    bool
+		wantErr bool
+	}{
+		{"where true", BoolArray{false, true}, args{func(i bool) bool { return i }}, true, false},
+		{"not in array", BoolArray{false, false}, args{func(i bool) bool { return i }}, false, true},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := tt.a.Find(tt.args.pred)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("Find() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if got != tt.want {
+				t.Errorf("Find() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestBoolArray_AnyMatch(t *testing.T) {
+	type args struct {
+		pred func(bool) bool
+	}
+	tests := []struct {
+		name string
+		a    BoolArray
+		args args
+		want bool
+	}{
+		{"match", BoolArray{false, true}, args{func(i bool) bool { return i }}, true},
+		{"no match", BoolArray{false, false}, args{func(i bool) bool { return i }}, false},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := tt.a.AnyMatch(tt.args.pred); got != tt.want {
+				t.Errorf("AnyMatch() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}

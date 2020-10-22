@@ -1,5 +1,7 @@
 package funct
 
+import "fmt"
+
 type StringArray []string
 
 func (a StringArray) Filter(pred func(string) bool) (out StringArray) {
@@ -36,6 +38,24 @@ func (a StringArray) Fold(start string, f func(string, string) string) string {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a StringArray) Find(pred func(string) bool) (string, error) {
+	for _, v := range a {
+		if pred(v) {
+			return v, nil
+		}
+	}
+	return "", fmt.Errorf("no value found")
+}
+
+func (a StringArray) AnyMatch(pred func(string) bool) bool {
+	for _, v := range a {
+		if pred(v) {
+			return true
+		}
+	}
+	return false
 }
 
 func (a StringArray) Join() (out string) {

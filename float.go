@@ -47,6 +47,13 @@ func (a Float32Array) ToByteArray() (out ByteArray) {
 	return
 }
 
+func (a Float32Array) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
 func (a Float32Array) ToIntArray() (out IntArray) {
 	for _, v := range a {
 		out = append(out, int(v))
@@ -172,6 +179,13 @@ func (a Float64Array) Fold(start float64, f func(a, b float64) float64) float64 
 func (a Float64Array) ToByteArray() (out ByteArray) {
 	for _, v := range a {
 		out = append(out, byte(v))
+	}
+	return
+}
+
+func (a Float64Array) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
 	}
 	return
 }

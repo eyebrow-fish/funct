@@ -37,4 +37,3 @@ func (a StringArray) Fold(start string, f func(a, b string) string) string {
 	}
 	return out
 }
-

@@ -1,5 +1,7 @@
 package funct
 
+import "strconv"
+
 type UintArray []uint
 
 func (a UintArray) Filter(pred func(i uint) bool) (out UintArray) {
@@ -36,6 +38,104 @@ func (a UintArray) Fold(start uint, f func(a, b uint) uint) uint {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a UintArray) ToByteArray() (out ByteArray) {
+	for _, v := range a {
+		out = append(out, byte(v))
+	}
+	return
+}
+
+func (a UintArray) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a UintArray) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
+func (a UintArray) ToIntArray() (out IntArray) {
+	for _, v := range a {
+		out = append(out, int(v))
+	}
+	return
+}
+
+func (a UintArray) ToInt8Array() (out Int8Array) {
+	for _, v := range a {
+		out = append(out, int8(v))
+	}
+	return
+}
+
+func (a UintArray) ToInt16Array() (out Int16Array) {
+	for _, v := range a {
+		out = append(out, int16(v))
+	}
+	return
+}
+
+func (a UintArray) ToInt32Array() (out Int32Array) {
+	for _, v := range a {
+		out = append(out, int32(v))
+	}
+	return
+}
+
+func (a UintArray) ToInt64Array() (out Int64Array) {
+	for _, v := range a {
+		out = append(out, int64(v))
+	}
+	return
+}
+
+func (a UintArray) ToRuneArray() (out RuneArray) {
+	for _, v := range a {
+		out = append(out, rune(v))
+	}
+	return
+}
+
+func (a UintArray) ToStringArray() (out StringArray) {
+	for _, v := range a {
+		out = append(out, strconv.Itoa(int(v)))
+	}
+	return
+}
+
+func (a UintArray) ToUint8Array() (out Uint8Array) {
+	for _, v := range a {
+		out = append(out, uint8(v))
+	}
+	return
+}
+
+func (a UintArray) ToUint16Array() (out Uint16Array) {
+	for _, v := range a {
+		out = append(out, uint16(v))
+	}
+	return
+}
+
+func (a UintArray) ToUint32Array() (out Uint32Array) {
+	for _, v := range a {
+		out = append(out, uint32(v))
+	}
+	return
+}
+
+func (a UintArray) ToUint64Array() (out Uint64Array) {
+	for _, v := range a {
+		out = append(out, uint64(v))
+	}
+	return
 }
 
 type Uint8Array []uint8
@@ -76,6 +176,104 @@ func (a Uint8Array) Fold(start uint8, f func(a, b uint8) uint8) uint8 {
 	return out
 }
 
+func (a Uint8Array) ToByteArray() (out ByteArray) {
+	for _, v := range a {
+		out = append(out, v)
+	}
+	return
+}
+
+func (a Uint8Array) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToIntArray() (out IntArray) {
+	for _, v := range a {
+		out = append(out, int(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToInt8Array() (out Int8Array) {
+	for _, v := range a {
+		out = append(out, int8(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToInt16Array() (out Int16Array) {
+	for _, v := range a {
+		out = append(out, int16(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToInt32Array() (out Int32Array) {
+	for _, v := range a {
+		out = append(out, int32(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToInt64Array() (out Int64Array) {
+	for _, v := range a {
+		out = append(out, int64(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToRuneArray() (out RuneArray) {
+	for _, v := range a {
+		out = append(out, rune(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToStringArray() (out StringArray) {
+	for _, v := range a {
+		out = append(out, string(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToUintArray() (out UintArray) {
+	for _, v := range a {
+		out = append(out, uint(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToUint16Array() (out Uint16Array) {
+	for _, v := range a {
+		out = append(out, uint16(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToUint32Array() (out Uint32Array) {
+	for _, v := range a {
+		out = append(out, uint32(v))
+	}
+	return
+}
+
+func (a Uint8Array) ToUint64Array() (out Uint64Array) {
+	for _, v := range a {
+		out = append(out, uint64(v))
+	}
+	return
+}
+
 type Uint16Array []uint16
 
 func (a Uint16Array) Filter(pred func(i uint16) bool) (out Uint16Array) {
@@ -112,6 +310,104 @@ func (a Uint16Array) Fold(start uint16, f func(a, b uint16) uint16) uint16 {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a Uint16Array) ToByteArray() (out ByteArray) {
+	for _, v := range a {
+		out = append(out, byte(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToIntArray() (out IntArray) {
+	for _, v := range a {
+		out = append(out, int(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToInt8Array() (out Int8Array) {
+	for _, v := range a {
+		out = append(out, int8(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToInt16Array() (out Int16Array) {
+	for _, v := range a {
+		out = append(out, int16(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToInt32Array() (out Int32Array) {
+	for _, v := range a {
+		out = append(out, int32(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToInt64Array() (out Int64Array) {
+	for _, v := range a {
+		out = append(out, int64(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToRuneArray() (out RuneArray) {
+	for _, v := range a {
+		out = append(out, rune(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToStringArray() (out StringArray) {
+	for _, v := range a {
+		out = append(out, strconv.Itoa(int(v)))
+	}
+	return
+}
+
+func (a Uint16Array) ToUintArray() (out UintArray) {
+	for _, v := range a {
+		out = append(out, uint(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToUint8Array() (out Uint8Array) {
+	for _, v := range a {
+		out = append(out, uint8(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToUint32Array() (out Uint32Array) {
+	for _, v := range a {
+		out = append(out, uint32(v))
+	}
+	return
+}
+
+func (a Uint16Array) ToUint64Array() (out Uint64Array) {
+	for _, v := range a {
+		out = append(out, uint64(v))
+	}
+	return
 }
 
 type Uint32Array []uint32
@@ -152,6 +448,104 @@ func (a Uint32Array) Fold(start uint32, f func(a, b uint32) uint32) uint32 {
 	return out
 }
 
+func (a Uint32Array) ToByteArray() (out ByteArray) {
+	for _, v := range a {
+		out = append(out, byte(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToIntArray() (out IntArray) {
+	for _, v := range a {
+		out = append(out, int(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToInt8Array() (out Int8Array) {
+	for _, v := range a {
+		out = append(out, int8(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToInt16Array() (out Int16Array) {
+	for _, v := range a {
+		out = append(out, int16(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToInt32Array() (out Int32Array) {
+	for _, v := range a {
+		out = append(out, int32(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToInt64Array() (out Int64Array) {
+	for _, v := range a {
+		out = append(out, int64(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToRuneArray() (out RuneArray) {
+	for _, v := range a {
+		out = append(out, rune(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToStringArray() (out StringArray) {
+	for _, v := range a {
+		out = append(out, strconv.Itoa(int(v)))
+	}
+	return
+}
+
+func (a Uint32Array) ToUintArray() (out UintArray) {
+	for _, v := range a {
+		out = append(out, uint(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToUint8Array() (out Uint8Array) {
+	for _, v := range a {
+		out = append(out, uint8(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToUint16Array() (out Uint16Array) {
+	for _, v := range a {
+		out = append(out, uint16(v))
+	}
+	return
+}
+
+func (a Uint32Array) ToUint64Array() (out Uint64Array) {
+	for _, v := range a {
+		out = append(out, uint64(v))
+	}
+	return
+}
+
 type Uint64Array []uint64
 
 func (a Uint64Array) Filter(pred func(i uint64) bool) (out Uint64Array) {
@@ -188,4 +582,102 @@ func (a Uint64Array) Fold(start uint64, f func(a, b uint64) uint64) uint64 {
 		out = f(out, v)
 	}
 	return out
+}
+
+func (a Uint64Array) ToByteArray() (out ByteArray) {
+	for _, v := range a {
+		out = append(out, byte(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToIntArray() (out IntArray) {
+	for _, v := range a {
+		out = append(out, int(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToInt8Array() (out Int8Array) {
+	for _, v := range a {
+		out = append(out, int8(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToInt16Array() (out Int16Array) {
+	for _, v := range a {
+		out = append(out, int16(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToInt32Array() (out Int32Array) {
+	for _, v := range a {
+		out = append(out, int32(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToInt64Array() (out Int64Array) {
+	for _, v := range a {
+		out = append(out, int64(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToRuneArray() (out RuneArray) {
+	for _, v := range a {
+		out = append(out, rune(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToStringArray() (out StringArray) {
+	for _, v := range a {
+		out = append(out, strconv.Itoa(int(v)))
+	}
+	return
+}
+
+func (a Uint64Array) ToUintArray() (out UintArray) {
+	for _, v := range a {
+		out = append(out, uint(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToUint8Array() (out Uint8Array) {
+	for _, v := range a {
+		out = append(out, uint8(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToUint16Array() (out Uint16Array) {
+	for _, v := range a {
+		out = append(out, uint16(v))
+	}
+	return
+}
+
+func (a Uint64Array) ToUint32Array() (out Uint32Array) {
+	for _, v := range a {
+		out = append(out, uint32(v))
+	}
+	return
 }

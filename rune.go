@@ -37,3 +37,101 @@ func (a RuneArray) Fold(start rune, f func(a, b rune) rune) rune {
 	}
 	return out
 }
+
+func (a RuneArray) ToByteArray() (out ByteArray) {
+	for _, v := range a {
+		out = append(out, byte(v))
+	}
+	return
+}
+
+func (a RuneArray) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a RuneArray) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
+func (a RuneArray) ToIntArray() (out IntArray) {
+	for _, v := range a {
+		out = append(out, int(v))
+	}
+	return
+}
+
+func (a RuneArray) ToInt8Array() (out Int8Array) {
+	for _, v := range a {
+		out = append(out, int8(v))
+	}
+	return
+}
+
+func (a RuneArray) ToInt16Array() (out Int16Array) {
+	for _, v := range a {
+		out = append(out, int16(v))
+	}
+	return
+}
+
+func (a RuneArray) ToInt32Array() (out Int32Array) {
+	for _, v := range a {
+		out = append(out, v)
+	}
+	return
+}
+
+func (a RuneArray) ToInt64Array() (out Int64Array) {
+	for _, v := range a {
+		out = append(out, int64(v))
+	}
+	return
+}
+
+func (a RuneArray) ToStringArray() (out StringArray) {
+	for _, v := range a {
+		out = append(out, string(v))
+	}
+	return
+}
+
+func (a RuneArray) ToUintArray() (out UintArray) {
+	for _, v := range a {
+		out = append(out, uint(v))
+	}
+	return
+}
+
+func (a RuneArray) ToUint8Array() (out Uint8Array) {
+	for _, v := range a {
+		out = append(out, uint8(v))
+	}
+	return
+}
+
+func (a RuneArray) ToUint16Array() (out Uint16Array) {
+	for _, v := range a {
+		out = append(out, uint16(v))
+	}
+	return
+}
+
+func (a RuneArray) ToUint32Array() (out Uint32Array) {
+	for _, v := range a {
+		out = append(out, uint32(v))
+	}
+	return
+}
+
+func (a RuneArray) ToUint64Array() (out Uint64Array) {
+	for _, v := range a {
+		out = append(out, uint64(v))
+	}
+	return
+}

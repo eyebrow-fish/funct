@@ -47,6 +47,20 @@ func (a IntArray) ToByteArray() (out ByteArray) {
 	return
 }
 
+func (a IntArray) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a IntArray) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
 func (a IntArray) ToInt8Array() (out Int8Array) {
 	for _, v := range a {
 		out = append(out, int8(v))
@@ -165,6 +179,20 @@ func (a Int8Array) Fold(start int8, f func(a, b int8) int8) int8 {
 func (a Int8Array) ToByteArray() (out ByteArray) {
 	for _, v := range a {
 		out = append(out, byte(v))
+	}
+	return
+}
+
+func (a Int8Array) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a Int8Array) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
 	}
 	return
 }
@@ -291,6 +319,20 @@ func (a Int16Array) ToByteArray() (out ByteArray) {
 	return
 }
 
+func (a Int16Array) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a Int16Array) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
 func (a Int16Array) ToIntArray() (out IntArray) {
 	for _, v := range a {
 		out = append(out, int(v))
@@ -413,6 +455,20 @@ func (a Int32Array) ToByteArray() (out ByteArray) {
 	return
 }
 
+func (a Int32Array) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a Int32Array) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
+	}
+	return
+}
+
 func (a Int32Array) ToIntArray() (out IntArray) {
 	for _, v := range a {
 		out = append(out, int(v))
@@ -531,6 +587,20 @@ func (a Int64Array) Fold(start int64, f func(a, b int64) int64) int64 {
 func (a Int64Array) ToByteArray() (out ByteArray) {
 	for _, v := range a {
 		out = append(out, byte(v))
+	}
+	return
+}
+
+func (a Int64Array) ToFloat32Array() (out Float32Array) {
+	for _, v := range a {
+		out = append(out, float32(v))
+	}
+	return
+}
+
+func (a Int64Array) ToFloat64Array() (out Float64Array) {
+	for _, v := range a {
+		out = append(out, float64(v))
 	}
 	return
 }

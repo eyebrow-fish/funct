@@ -20,7 +20,7 @@ package main
 
 import (
 	"fmt"
-	"com.github/eyebrow-fish/funct"
+	"github.com/eyebrow-fish/funct"
 )
 
 func main() {

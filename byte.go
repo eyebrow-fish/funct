@@ -2,7 +2,7 @@ package funct
 
 type ByteArray []byte
 
-func (a ByteArray) Filter(pred func(i byte) bool) (out ByteArray) {
+func (a ByteArray) Filter(pred func(byte) bool) (out ByteArray) {
 	for _, v := range a {
 		if pred(v) {
 			out = append(out, v)
@@ -11,26 +11,26 @@ func (a ByteArray) Filter(pred func(i byte) bool) (out ByteArray) {
 	return
 }
 
-func (a ByteArray) Foreach(f func(i byte) byte) {
+func (a ByteArray) Foreach(f func(byte) byte) {
 	for _, v := range a {
 		f(v)
 	}
 }
 
-func (a ByteArray) ForeachIndexed(f func(i int, v byte) byte) {
+func (a ByteArray) ForeachIndexed(f func(int, byte) byte) {
 	for i, v := range a {
 		f(i, v)
 	}
 }
 
-func (a ByteArray) Reduce(f func(a, b byte) byte) (out byte) {
+func (a ByteArray) Reduce(f func(byte, byte) byte) (out byte) {
 	for _, v := range a {
 		out = f(out, v)
 	}
 	return
 }
 
-func (a ByteArray) Fold(start byte, f func(a, b byte) byte) byte {
+func (a ByteArray) Fold(start byte, f func(byte, byte) byte) byte {
 	out := start
 	for _, v := range a {
 		out = f(out, v)
